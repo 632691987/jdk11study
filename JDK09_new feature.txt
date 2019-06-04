@@ -1,0 +1,37 @@
+https://yifeng.studio/2017/03/12/translation-java-9-features-with-examples/
+https://www.jianshu.com/p/fd18fa1d09d2
+
+1, Module System.
+2, Reactive programming.
+3, Allow interface contain private method.
+4, Optional class has new method (or / ifPresentOrElse / Stream), and in JDK 10, has one more(orElseThrow function)
+5, Stream with takeWhile and dropWhile function
+6, JShell
+10, Collections new function(List.of -> create immutable collection)
+11, Some "ProcessHandler" or "FeatureCompitable"
+12, @Deprecated annotation
+13 Http 2 Client
+
+
+
+==========================================================================================
+关于垃圾回收器
+
+1，GC的作用范围
+JVM内存中主要有以下几个区域：堆(就是产生的对象)、方法区（含有各种类，这是元文件）、栈、本地方法栈、PC
+---> GC主要作用在堆上
+
+2，GC负责的事情
+    1. 分配对象和对象的年龄管理
+    2. 在老年代中进行标记
+    3. 在老年代中进行压缩
+
+3，JVM中的4种GC
+Serail / 在需要GC的安全点，它会停止所有其他线程 / 用-XX:+UseSerialGC 来激活
+Parallel/Throughput   / 由于使用了多线程，可以享受多核CPU带来的优势/   用-XX:+UseParallelGC -XX:+UseParallelOldGC激活
+CMS / CMS的设计比较复杂 / 用-XX:+UseConcMarkSweepGC激活
+G1(默认GC) / 就是传统的Eden区，Survivor区，中生代，年老代
+
+G1的一些细节
+使用Java 9正式版对G1进行测试
+一些简单的GC调优方法
