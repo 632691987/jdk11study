@@ -28,7 +28,7 @@ public class StreamTest {
 
 		//equal to filter, but it will stop when condition not satisfy
 		Stream<Integer> stream2 = stream1.takeWhile(t -> t % 2 != 0);
-		stream2.forEach(System.out::println);//Result is [3,9]
+		//stream2.forEach(System.out::println);//Result is [3,9]
 		
 		stream1 = Stream.of(3, 9, 20, 22, 40, 7);
 		//equal to filter, but it will drop all the element satisfy in the predicate, until first predicate not satisfy

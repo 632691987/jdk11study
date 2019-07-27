@@ -16,7 +16,10 @@ public class StreamStudy {
 
 	@Test
 	public void testCase02() {
-		List<Integer> list = Stream.of(10,2,1,7,8,3,0).dropWhile(n -> n < 3).collect(Collectors.toList());  // [3, 2, 1]
+		/**
+		 * discard when pridicate satisify, once satisfy, go to the end
+		 */
+		List<Integer> list = Stream.of(1,2,3,4,2,1,8).dropWhile(n -> n < 3).collect(Collectors.toList());  // [3, 4, 2, 1, 8]
 		System.out.println(list);
 	}
 
@@ -25,7 +28,10 @@ public class StreamStudy {
 	 */
 	@Test
 	public void testCase03() {
-		List<Integer> list = Stream.of(10,2,1,7,8,3,0).takeWhile(n -> n < 3).collect(Collectors.toList());  // [3, 2, 1]
+		/**
+		 * Get everything when prodicte satisify, once not, stop
+		 */
+		List<Integer> list = Stream.of(1,2,3,4,2,1).takeWhile(n -> n < 3).collect(Collectors.toList());  // [1, 2]
 		System.out.println(list);
 	}
 

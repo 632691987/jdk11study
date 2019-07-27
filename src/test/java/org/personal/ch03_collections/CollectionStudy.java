@@ -34,4 +34,15 @@ public class CollectionStudy {
 		var map = Map.of("A", 1, "B", 2);
 		map.put("C",3);
 	}
+
+	@Test
+	public void testCase04() {
+		var list = new ArrayList<String>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		var copy = List.copyOf(list);
+		System.out.println(list == copy);   // true
+	}
+
 }

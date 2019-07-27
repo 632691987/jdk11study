@@ -36,7 +36,9 @@ public class MyReactiveAppWithProcessor {
 
 		// Publish items
 		System.out.println("Publishing Items to Subscriber");
-		emps.stream().forEach(i -> publisher.submit(i));
+		for(int index = 0; index < emps.size(); index ++){
+			publisher.submit(emps.get(index));
+		}
 
 		// Logic to wait for messages processing to finish
 		while (emps.size() != subs.getCounter()) {

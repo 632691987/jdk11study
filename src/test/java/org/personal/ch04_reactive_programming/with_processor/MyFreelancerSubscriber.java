@@ -13,17 +13,18 @@ public class MyFreelancerSubscriber implements Subscriber<Freelancer> {
 
 	@Override
 	public void onSubscribe(Subscription subscription) {
-		System.out.println("Subscribed for Freelancer");
+		System.out.println("MyFreelancerSubscriber::onSubscribe start");
 		this.subscription = subscription;
 		this.subscription.request(1); //requesting data from publisher
-		System.out.println("onSubscribe requested 1 item for Freelancer");
+		System.out.println("MyFreelancerSubscriber::onSubscribe end");
 	}
 
 	@Override
 	public void onNext(Freelancer item) {
-		System.out.println("Processing Freelancer "+item);
+		System.out.println("MyFreelancerSubscriber::onNext start");
 		counter++;
 		this.subscription.request(1);
+		System.out.println("MyFreelancerSubscriber::onNext end");
 	}
 
 	@Override

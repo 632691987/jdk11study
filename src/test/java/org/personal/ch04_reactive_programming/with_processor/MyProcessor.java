@@ -20,14 +20,18 @@ public class MyProcessor extends SubmissionPublisher<Freelancer> implements Proc
 
 	@Override
 	public void onSubscribe(Subscription subscription) {
+		System.out.println("MyProcessor::onSubscribe start");
 		this.subscription = subscription;
 		subscription.request(1);
+		System.out.println("MyProcessor::onSubscribe end");
 	}
 
 	@Override
 	public void onNext(Employee emp) {
+		System.out.println("MyProcessor::onNext start");
 		submit(function.apply(emp));
 		subscription.request(1);
+		System.out.println("MyProcessor::onNext end");
 	}
 
 	@Override
@@ -37,7 +41,7 @@ public class MyProcessor extends SubmissionPublisher<Freelancer> implements Proc
 
 	@Override
 	public void onComplete() {
-		System.out.println("Done");
+		System.out.println("MyProcessor::onComplete");
 	}
 
 }
