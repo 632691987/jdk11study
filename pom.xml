@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <google.guava.version>27.0.1-jre</google.guava.version>
+        <google.guava.version>29.0-jre</google.guava.version>
     </properties>
 
     <dependencies>
